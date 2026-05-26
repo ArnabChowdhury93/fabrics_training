@@ -1,0 +1,70 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "ed69343f-e9a7-b83d-40c4-4f7bafee1208",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "destination": {
+      "type": "SnowflakeTable",
+      "connectionSettings": {
+        "type": "Snowflake",
+        "typeProperties": {
+          "database": "TRAINING_DB"
+        },
+        "externalReferences": {
+          "connection": "667d8ce4-0acb-41a5-8b93-4154b1c17db4"
+        }
+      },
+      "additionalSettings": {
+        "storageIntegration": "FABRIC_INT_PRA"
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "4009474f-ac85-4914-81c1-54dae1825567",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "adventureworks_calendar"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "importSettings": {
+            "type": "SnowflakeImportCopyCommand"
+          },
+          "datasetSettings": {
+            "schema": "PRAVEEN_SCHEMA",
+            "table": "adventureworks_calendar"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Raw{@item().p_sink_folder}",
+    "path": "/Files/Raw@item().p_sink_folder",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/Raw{@item().p_sink_folder}",
+        "itemId": "00000000-0000-0000-0000-000000000000",
+        "workspaceId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  },
+  {
+    "name": "hidden",
+    "path": "/Files/Raw",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "2d049331-73e5-4894-8491-6295488de817",
+        "location": "s3://batch2user10",
+        "subpath": "/hidden"
+      }
+    }
+  },
+  {
+    "name": "data_1",
+    "path": "/Files/Raw",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "bf246f99-27ab-4803-b402-69839662420b",
+        "location": "https://tavantuser10.blob.core.windows.net",
+        "subpath": "/data"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files/Raw",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "2d049331-73e5-4894-8491-6295488de817",
+        "location": "s3://batch2user10",
+        "subpath": "/data"
+      }
+    }
+  }
+]

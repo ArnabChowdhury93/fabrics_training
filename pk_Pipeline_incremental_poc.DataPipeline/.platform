@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pk_Pipeline_incremental_poc"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6256200a-27db-907f-4542-ea684eb6542f"
+  }
+}

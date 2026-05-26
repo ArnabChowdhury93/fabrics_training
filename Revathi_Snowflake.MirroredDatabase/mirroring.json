@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "source": {
+      "type": "Snowflake",
+      "typeProperties": {
+        "connection": "51c132cd-79bf-4eff-9912-a5d48b07b81f",
+        "database": "TRAINING_DB"
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta",
+        "retentionInDays": 1
+      }
+    },
+    "mountedTables": [
+      {
+        "source": {
+          "typeProperties": {
+            "schemaName": "RAW",
+            "tableName": "RP_TRANSACTIONS"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "banking_Data",
+    "path": "/Files/input",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/banking_Data",
+        "itemId": "e4ac3f29-eace-8020-4a77-8028682c2505",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "data_azure",
+    "path": "/Files",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "ba4d9409-5c64-4f19-a284-529fa9a548bd",
+        "location": "https://tavantrrbatch2.blob.core.windows.net",
+        "subpath": "/data"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "a3773902-66dc-4de1-a5d8-39baa3b2f74a",
+        "location": "s3://rahul-tavant-batch2",
+        "subpath": "/data"
+      }
+    }
+  }
+]

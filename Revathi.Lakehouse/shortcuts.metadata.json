@@ -1,0 +1,14 @@
+[
+  {
+    "name": "RawAdventureWorks_Calendar.csv",
+    "path": "/Files/RawAdventureWorks_Customers.csv",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/RawAdventureWorks_Calendar.csv",
+        "itemId": "00000000-0000-0000-0000-000000000000",
+        "workspaceId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+]

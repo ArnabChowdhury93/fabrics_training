@@ -1,0 +1,88 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "fullLoadBehavior": "Truncate",
+    "source": {
+      "type": "DelimitedText",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "ed69343f-e9a7-b83d-40c4-4f7bafee1208",
+          "rootFolder": "Files"
+        }
+      }
+    },
+    "destination": {
+      "type": "SnowflakeTable",
+      "connectionSettings": {
+        "type": "Snowflake",
+        "typeProperties": {
+          "database": "TRAINING_DB"
+        },
+        "externalReferences": {
+          "connection": "667d8ce4-0acb-41a5-8b93-4154b1c17db4"
+        }
+      },
+      "additionalSettings": {
+        "storageIntegration": "FABRIC_INT_PRA"
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "1e56a987-1102-4ed5-891d-41caad975669",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "folderPath": "Output"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          },
+          "storeSettings": {
+            "recursive": true,
+            "enablePartitionDiscovery": false
+          },
+          "formatSettings": {}
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              ""
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "importSettings": {
+            "type": "SnowflakeImportCopyCommand"
+          },
+          "datasetSettings": {
+            "schema": "PRAVEEN_SCHEMA",
+            "table": "Output"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

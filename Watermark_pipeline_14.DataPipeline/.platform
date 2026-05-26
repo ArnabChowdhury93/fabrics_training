@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Watermark_pipeline_14"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fadc4dca-a6d4-a738-4a29-148c92335d72"
+  }
+}

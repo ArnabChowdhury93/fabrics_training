@@ -1,0 +1,15 @@
+[
+  {
+    "name": "banking_lakehouse",
+    "path": "/Files/data_access",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/banking_lakehouse",
+        "itemId": "b6caa59e-bfd3-b6f1-4726-8c4a042e4968",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]

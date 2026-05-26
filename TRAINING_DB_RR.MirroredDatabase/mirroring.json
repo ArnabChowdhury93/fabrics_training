@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "source": {
+      "type": "Snowflake",
+      "typeProperties": {
+        "connection": "8aa5effb-8058-49a3-ae37-efab286057a8",
+        "database": "TRAINING_DB_RR",
+        "filterRules": [
+          {
+            "target": "objectType",
+            "action": "allow",
+            "values": [
+              "Table"
+            ]
+          }
+        ]
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta",
+        "retentionInDays": 1
+      }
+    }
+  }
+}

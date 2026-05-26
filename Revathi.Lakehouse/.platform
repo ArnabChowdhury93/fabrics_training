@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Revathi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ee4bd729-0cf8-9f0b-4baa-b725f63a0cc6"
+  }
+}

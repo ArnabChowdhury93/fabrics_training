@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Input",
+    "path": "/Files/SHORTCUT",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "9ad3a74e-3d4f-4c9a-9f28-d7bfd467de3d",
+        "location": "s3://pk-s3-bucket-traning",
+        "subpath": "/Input"
+      }
+    }
+  },
+  {
+    "name": "input",
+    "path": "/Files/SHORTCUT",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "f22a0bc7-3ab0-4f5c-bfda-6b18c6a16523",
+        "location": "https://pkstgaccount.dfs.core.windows.net",
+        "subpath": "/input"
+      }
+    }
+  },
+  {
+    "name": "hidden",
+    "path": "/Files/SHORTCUT",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "9ad3a74e-3d4f-4c9a-9f28-d7bfd467de3d",
+        "location": "s3://pk-s3-bucket-traning",
+        "subpath": "/hidden"
+      }
+    }
+  },
+  {
+    "name": "DATA",
+    "path": "/Files/SHORTCUT",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DATA",
+        "itemId": "a59dc66a-1efa-94ae-434a-2fba9b957c08",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]

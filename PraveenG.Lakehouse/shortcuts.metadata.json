@@ -1,0 +1,51 @@
+[
+  {
+    "name": "hidden",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "7712926b-f244-434d-8a07-693819f66afd",
+        "location": "s3://shruti-tavant-batch2",
+        "subpath": "/hidden"
+      }
+    }
+  },
+  {
+    "name": "data_2",
+    "path": "/Files",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "58d6f859-3029-4e66-a6c8-157d89d82057",
+        "location": "https://tavantbatch2.blob.core.windows.net",
+        "subpath": "/data"
+      }
+    }
+  },
+  {
+    "name": "data_1",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "7712926b-f244-434d-8a07-693819f66afd",
+        "location": "s3://shruti-tavant-batch2",
+        "subpath": "/data"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/data",
+        "itemId": "6ff37d51-9605-9ae2-4a92-f97d129ef5f5",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]

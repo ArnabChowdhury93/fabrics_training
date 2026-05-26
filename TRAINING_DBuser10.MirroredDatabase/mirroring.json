@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "source": {
+      "type": "Snowflake",
+      "typeProperties": {
+        "connection": "4e3d44ca-99cc-41d4-a1cf-77cf136550ec",
+        "database": "TRAINING_DB",
+        "externalStorages": [
+          {
+            "type": "AmazonS3",
+            "typeProperties": {
+              "connection": "dca05067-a239-445f-888e-00ff254ec96c"
+            }
+          }
+        ],
+        "filterRules": [
+          {
+            "target": "objectType",
+            "action": "allow",
+            "values": [
+              "Table"
+            ]
+          }
+        ]
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta",
+        "retentionInDays": 1
+      }
+    }
+  }
+}

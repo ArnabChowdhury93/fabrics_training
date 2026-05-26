@@ -1,0 +1,162 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "dim_customer"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "PraveenG",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "afee1208-4f7b-40c4-b83d-e9a7ed69343f",
+                    "workspaceId": "320b1c27-3cbc-42ea-81b6-aba6ff5ec178",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "SnowflakeSink",
+            "importSettings": {
+              "type": "SnowflakeImportCopyCommand",
+              "storageIntegration": "FABRIC_INT_PRA"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "schema": "PRAVEEN_SCHEMA",
+                "table": "DIM_CUSTOMER",
+                "database": "TRAINING_DB"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "667d8ce4-0acb-41a5-8b93-4154b1c17db4"
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true,
+          "stagingSettings": {
+            "path": "snowflake-stage",
+            "externalReferences": {
+              "connection": "de3f74fd-d517-4f4b-850f-c5fdad4739ac"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "schema": "SALES_SCHEMA",
+                "table": "SALES_TRANSACTIONS",
+                "database": "RETAIL_DB"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "667d8ce4-0acb-41a5-8b93-4154b1c17db4"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "formatSettings": {
+              "type": "DelimitedTextWriteSettings",
+              "fileExtension": ".txt"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "snow_to_lakehouse"
+                },
+                "columnDelimiter": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "PraveenG",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "ed69343f-e9a7-b83d-40c4-4f7bafee1208",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data2",
+        "dependsOn": []
+      }
+    ]
+  }
+}

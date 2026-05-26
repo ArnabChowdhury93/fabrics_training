@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow 2",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "credit_card_transactions": {
+      "queryId": "b42b030f-21ff-45d1-a285-cbdc55669f0f",
+      "queryName": "credit_card_transactions"
+    },
+    "credit_card_transactions_DataDestination": {
+      "queryId": "bff86292-73c6-473d-b5fe-7bb521c9afb1",
+      "queryName": "credit_card_transactions_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "FabricSql",
+      "kind": "FabricSql",
+      "connectionId": "{\"ClusterId\":\"46da3797-a20f-44c6-9bba-39534c051528\",\"DatasourceId\":\"35fc2e7c-4771-429b-a459-94cd915a0c90\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"46da3797-a20f-44c6-9bba-39534c051528\",\"DatasourceId\":\"3bf59ac9-9498-4710-9d71-bb6141c55fd7\"}"
+    }
+  ],
+  "fastCombine": true
+}
