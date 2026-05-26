@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "source": {
+      "type": "Snowflake",
+      "typeProperties": {
+        "connection": "06fb51f6-f83c-4a83-93e1-0983bb1b6f42",
+        "database": "TRAINING_DB"
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta",
+        "retentionInDays": 1
+      }
+    },
+    "mountedTables": [
+      {
+        "source": {
+          "typeProperties": {
+            "schemaName": "ARNAB_TAVANT_BATCH2",
+            "tableName": "CREDIT_CARD_TRANSACTIONS"
+          }
+        }
+      },
+      {
+        "source": {
+          "typeProperties": {
+            "schemaName": "ARNAB_TAVANT_BATCH2",
+            "tableName": "WATERMARK_CONTROL"
+          }
+        }
+      }
+    ]
+  }
+}

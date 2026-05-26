@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "arnab_tavant_batch2_wh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c9665af1-d9bc-9895-4316-e91684bfe49f"
+  }
+}

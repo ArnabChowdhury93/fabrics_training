@@ -1,0 +1,38 @@
+[
+  {
+    "name": "arjuncontainer",
+    "path": "/Files/AZURE_Shortcut",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "f71b393f-d8c9-43da-9d2a-0b2ebc707519",
+        "location": "https://tavantarjstorageacc.blob.core.windows.net",
+        "subpath": "/arjuncontainer"
+      }
+    }
+  },
+  {
+    "name": "hidden",
+    "path": "/Files/AWS-shortcut",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "f15ec3e5-67d6-4702-9cc6-fe521006a333",
+        "location": "s3://arjun-tavant-bkt",
+        "subpath": "/hidden"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files/AWS-shortcut",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "f15ec3e5-67d6-4702-9cc6-fe521006a333",
+        "location": "s3://arjun-tavant-bkt",
+        "subpath": "/data"
+      }
+    }
+  }
+]

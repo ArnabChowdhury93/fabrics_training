@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "arnab_day3"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ab9caa28-bd78-8ec6-4675-db492489387c"
+  }
+}

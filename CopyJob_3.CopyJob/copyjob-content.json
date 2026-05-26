@@ -1,0 +1,70 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "0fb7def2-769b-a5ec-4e00-fca66c1d9073",
+          "endPoint": "wcuajmhcq7buhgkayyx65yk77e-bcl3ym3pl6jefko22cydd6ah5m.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    },
+    "destination": {
+      "type": "SnowflakeTable",
+      "connectionSettings": {
+        "type": "Snowflake",
+        "typeProperties": {
+          "database": "ARJ_TRAINING_DB"
+        },
+        "externalReferences": {
+          "connection": "c5095664-b675-4a28-abde-a3b91775e47a"
+        }
+      },
+      "additionalSettings": {
+        "storageIntegration": "FABRIC_INT_ARJ"
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "612dfde3-ee95-4762-9e36-70f0136db75c",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "credit_card_transactions"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "importSettings": {
+            "type": "SnowflakeImportCopyCommand"
+          },
+          "datasetSettings": {
+            "schema": "ARJ_RAW",
+            "table": "credit_card_transactions_Fabric2"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

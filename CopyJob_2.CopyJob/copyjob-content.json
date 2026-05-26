@@ -1,0 +1,145 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "SnowflakeTable",
+      "connectionSettings": {
+        "type": "Snowflake",
+        "typeProperties": {
+          "database": "RETAIL_DB"
+        },
+        "externalReferences": {
+          "connection": "b95bc9d9-b16c-430d-94a9-a17e4ee608fe"
+        }
+      },
+      "additionalSettings": {
+        "storageIntegration": "FABRIC_INT"
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "f20e48d4-d1a9-80ac-4ed0-ead53494e1c1",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "d515bfee-2cd5-4bf0-b6c2-1ded0cc1238c",
+      "properties": {
+        "source": {
+          "exportSettings": {
+            "type": "SnowflakeExportCopyCommand"
+          },
+          "datasetSettings": {
+            "schema": "SALES_SCHEMA",
+            "table": "SALES_TRANSACTIONS"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "schema": "SALES_SCHEMA",
+            "table": "SALES_TRANSACTIONS"
+          },
+          "applyVOrder": false
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "ORDER_ID",
+                "type": "Decimal",
+                "physicalType": "NUMBER",
+                "scale": 0,
+                "precision": 38
+              },
+              "destination": {
+                "name": "ORDER_ID",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "CUSTOMER_NAME",
+                "type": "String",
+                "physicalType": "VARCHAR"
+              },
+              "destination": {
+                "name": "CUSTOMER_NAME",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "PRODUCT_NAME",
+                "type": "String",
+                "physicalType": "VARCHAR"
+              },
+              "destination": {
+                "name": "PRODUCT_NAME",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "REGION",
+                "type": "String",
+                "physicalType": "VARCHAR"
+              },
+              "destination": {
+                "name": "REGION",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "SALES_AMOUNT",
+                "type": "Decimal",
+                "physicalType": "NUMBER",
+                "scale": 2,
+                "precision": 10
+              },
+              "destination": {
+                "name": "SALES_AMOUNT",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "ORDER_DATE",
+                "type": "Date",
+                "physicalType": "DATE"
+              },
+              "destination": {
+                "name": "ORDER_DATE",
+                "physicalType": "date"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "source": {
+      "type": "Snowflake",
+      "typeProperties": {
+        "connection": "c5095664-b675-4a28-abde-a3b91775e47a",
+        "database": "ARJ_TRAINING_DB",
+        "externalStorages": [
+          {
+            "type": "AzureBlobs",
+            "typeProperties": {
+              "connection": "019c4a4f-7261-41ae-970c-e82b5e06eaa2"
+            }
+          }
+        ],
+        "filterRules": [
+          {
+            "target": "objectType",
+            "action": "allow",
+            "values": [
+              "Table",
+              "IcebergTable"
+            ]
+          }
+        ]
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta",
+        "retentionInDays": 1
+      }
+    }
+  }
+}

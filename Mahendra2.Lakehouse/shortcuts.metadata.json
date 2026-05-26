@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Raw01",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/Raw01",
+        "itemId": "c0a0128d-e923-a8df-44ec-25d2a44d8e65",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "Raw",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/Raw",
+        "itemId": "c0a0128d-e923-a8df-44ec-25d2a44d8e65",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "mahendracont",
+    "path": "/Files",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "ad078f9a-db70-4fa5-84db-2eb077966a30",
+        "location": "https://mahendrastg.blob.core.windows.net",
+        "subpath": "/mahendracont"
+      }
+    }
+  },
+  {
+    "name": "mahendra-ms-fabric-test-bucket",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "95727019-146a-48b1-a302-0ed07f9e2dae",
+        "location": "s3://mahendra-ms-fabric-test-bucket",
+        "subpath": "/"
+      }
+    }
+  }
+]

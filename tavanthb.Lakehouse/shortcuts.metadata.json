@@ -1,0 +1,26 @@
+[
+  {
+    "name": "hidden",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "8cee5c00-9aaa-4638-9471-d74367a740d5",
+        "location": "s3://tavant-hb",
+        "subpath": "/hidden"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "8cee5c00-9aaa-4638-9471-d74367a740d5",
+        "location": "s3://tavant-hb",
+        "subpath": "/data"
+      }
+    }
+  }
+]

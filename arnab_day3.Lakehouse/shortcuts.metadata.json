@@ -1,0 +1,26 @@
+[
+  {
+    "name": "tavantbatch2arnab",
+    "path": "/Files",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "535f97e2-b53b-452c-8945-7d3e71a40a66",
+        "location": "https://tavantbatch2arnab.blob.core.windows.net",
+        "subpath": "/tavantbatch2arnab"
+      }
+    }
+  },
+  {
+    "name": "data",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "fdb1e8b2-1389-47be-821f-5ed5378fb4c7",
+        "location": "s3://arnab-tavant-batch2",
+        "subpath": "/data"
+      }
+    }
+  }
+]

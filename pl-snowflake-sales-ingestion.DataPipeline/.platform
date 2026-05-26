@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl-snowflake-sales-ingestion"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ac484377-3cf7-b500-45b6-ab6b5ab3cfcf"
+  }
+}

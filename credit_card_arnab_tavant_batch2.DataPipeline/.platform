@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "credit_card_arnab_tavant_batch2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "519ddea2-a274-bd62-4a35-8a616c41acd5"
+  }
+}

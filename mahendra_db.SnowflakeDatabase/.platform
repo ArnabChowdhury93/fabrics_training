@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SnowflakeDatabase",
+    "displayName": "mahendra_db",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9d887beb-12d1-bdbb-4638-29bfa2e8cfed"
+  }
+}

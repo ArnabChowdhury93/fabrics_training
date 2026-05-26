@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "tavanthb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a78c6b3c-b5ea-822e-4d14-b45a6f4d2ee1"
+  }
+}

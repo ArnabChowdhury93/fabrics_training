@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MirroredDatabase",
+    "displayName": "TRAINING_DB"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5d97c198-006e-bd2c-463b-1ccb82878379"
+  }
+}
