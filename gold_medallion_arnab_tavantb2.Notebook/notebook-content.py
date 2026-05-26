@@ -27,7 +27,7 @@
 # Lakehouse: lh_sales_medallion
 # Purpose:   Shape Silver into consumer-ready tables. Star schema for BI
 #            (dim_*, fact_*) plus a couple of aggregated marts for fast
-#            dashboards. Optimized for Direct Lake in Power BI.
+#            dashboards. Optimized for Direct Lake in Power BI...
 # =============================================================================
 
 from pyspark.sql import functions as F
